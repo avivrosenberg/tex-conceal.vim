@@ -314,3 +314,10 @@ call s:SuperSub('_','\\rho','ᵨ')
 call s:SuperSub('_','\\phi','ᵩ')
 call s:SuperSub('_','\\gamma','ᵧ')
 call s:SuperSub('_','\\chi','ᵪ')
+
+""""""""""""""""""""""""""""
+" hacks for my custom macros
+syn region texBoldMathTextCustom  matchgroup=texStatement start='\\\%(mat\|vec\|rvec\){' end='}' concealends contains=@texMathZoneGroup containedin=texMathMatcher
+syn cluster texMathZoneGroup add=texBoldMathTextCustom
+hi texBoldMathTextCustom cterm=bold gui=bold
+""""""""""""""""""""""""""""
